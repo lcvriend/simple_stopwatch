@@ -1,3 +1,14 @@
+import textwrap
+from time import perf_counter
+from datetime import datetime, timedelta
+from types import FunctionType
+from typing import Callable, Literal
+
+
+type DurationFormatterOptions = Literal['seconds', 'timedelta', 'min_sec_ms']
+type DurationFormatter = DurationFormatterOptions|Callable[[float], str]
+
+
 class Stopwatch:
     """
     Simple stopwatch.
